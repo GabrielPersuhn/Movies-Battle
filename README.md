@@ -1,6 +1,6 @@
-#Movies-Battle
+# Movies-Battle
 
-##Trabalho em grupo Let's Code
+## Trabalho em grupo Let's Code
 
 Seguindo o estilo de jogos Quizz ou Trivia, onde ganha "quem sabe mais", vamos construir uma app para medir o conhecimento dos participantes sobre filmes e séries. Para isso, vamos usar como referência o conteúdo disponível no site IMDB e consumir esses dados para nosso banco de dados via API Rest.
 
@@ -10,17 +10,17 @@ Em cada requisição de jogada, serão informados usuário e senha, e na respost
 
 O progresso de cada jogador será armazenado no arquivo "jogos.csv", contendo login e o progresso atual no formato "x/y" onde x=acertos e y=total. O histórico ficará em "ranking.csv" ordenado da maior pontuação para a menor.
 
-##Fluxo
+## Fluxo
 Iniciar arquivo "filmes.csv" com os filmes disponíveis para jogar. Você escolhe como fazer.
 Iniciar arquivo "jogadores.csv" com os jogadores aptos a jogar. Você escolhe como fazer.
 Em cada jogada, será feita uma requisição GET para "/quizz". A resposta contém dois filmes.
 A resposta do jogador será enviada como requisição POST para "/quizz" informando usuário, senha e id do filme/série vencedor. Tudo deve estar encapsulado no "request body". O endpoint responde verdadeiro/falso para o resultado e atualiza o progresso em "jogos.csv".
 Quando o jogador perde, o progresso final é escrito em "ranking.csv", tendo o cuidado de manter ordenado. O ranking pode ser acessado em "/ranking"
-##Entrega
+## Entrega
  - O projeto será em grupo (até 5 pessoas);
  - Será entregue mediante url do repositório Github - serão avaliados os commits de cada um;
  - >> Prazo: 20/7 <<
-##Itens de avaliação
+## Itens de avaliação
  - Uso do modelo MVC;
  - Divisão de responsabilidades: classes, métodos, etc;
  - Cobertura de testes;

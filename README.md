@@ -25,4 +25,4 @@ Quando o jogador perde, o progresso final é escrito em "ranking.csv", tendo o c
  - Divisão de responsabilidades: classes, métodos, etc;
  - Cobertura de testes;
  - Facilidade de uso;
- - Sobretudo, realizar as funcionalidades pedidas =) 
+ - Sobretudo, realizar as funcionalidades pedidas =)   

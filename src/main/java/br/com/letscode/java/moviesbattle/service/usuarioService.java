@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface usuarioService {
     List<Usuario> listAll() throws IOException;
-
-    int isThereSuchUser(String nome); // retorna 0 se não houver - é uma maneira de juntar um método de retorno booleano com int
-
+    boolean loginAttempt(Usuario usuario, String senhaAttempt);
+    int isThereSuchUser(String nome) throws IOException;
+    Usuario createNewUser(Usuario newUser) throws IOException;
 }

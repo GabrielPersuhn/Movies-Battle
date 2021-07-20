@@ -12,6 +12,5 @@ public interface usuarioDAO {
     Usuario csvLineToUser( String linha);
     String userToCsVLine (Usuario writtenUser);
 
-
-
-    }
+    Usuario inserirUsuarioNoArquivo(Usuario user) throws IOException;
+}

@@ -1,6 +1,8 @@
 package br.com.letscode.java.moviesbattle.dominio;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 public class Jogador {

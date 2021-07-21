@@ -1,6 +1,7 @@
 package br.com.letscode.java.moviesbattle.DAO;
 
 import br.com.letscode.java.moviesbattle.dominio.Jogador;
+import br.com.letscode.java.moviesbattle.dominio.Usuario;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -84,6 +85,8 @@ public class jogadorDAOimpl implements jogadorDAO {
         writeToRank(jogadorToCsVFormat(player), StandardOpenOption.APPEND);
         return player;
     }
+
+
 
 
 

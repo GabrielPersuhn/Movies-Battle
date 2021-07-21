@@ -1,13 +1,10 @@
 package br.com.letscode.java.moviesbattle.dominio;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-public class Usuario {
-    private int index;
+public class Response {
     private String userName;
     private String senha;
-    private int score;
+    private String idIMDB;
 }

@@ -1,9 +1,16 @@
 package br.com.letscode.java.moviesbattle.service;
 
+import br.com.letscode.java.moviesbattle.DAO.jogadorDAO;
 import br.com.letscode.java.moviesbattle.dominio.Jogador;
 import br.com.letscode.java.moviesbattle.dominio.Usuario;
+import lombok.SneakyThrows;
+
+import java.io.IOException;
 
 public class jogadorServiceImpl implements jogadorService {
+
+    private jogadorDAO jogadorDAO;
+
     @Override
     public Jogador turnUserIntoPlayer(Usuario user) { // quando uma nova partida começar
         Jogador player = new Jogador();

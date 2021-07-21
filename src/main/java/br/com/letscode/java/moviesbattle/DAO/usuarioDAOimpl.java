@@ -1,6 +1,7 @@
 package br.com.letscode.java.moviesbattle.DAO;
 
 import br.com.letscode.java.moviesbattle.dominio.Usuario;
+import br.com.letscode.java.moviesbattle.sercurity.criptografia;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -16,11 +17,13 @@ import java.util.StringTokenizer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class usuarioDAOimpl implements usuarioDAO{
+public class usuarioDAOimpl implements usuarioDAO {
+
     private String caminhoUsuarios = "src/main/java/br/com/letscode/java/moviesbattle/arquivos/jogadores.csv";
 
     private Path pathUsuarios;
 
+    private criptografia criptografia;
 
     public void initUsuarios() {
         try {
@@ -40,19 +43,19 @@ public class usuarioDAOimpl implements usuarioDAO{
     }
 
 
-
     @Override
     public List<Usuario> getAll() throws IOException {
         List<Usuario> user;
-        try (BufferedReader br = Files.newBufferedReader(pathUsuarios)){
+        try (BufferedReader br = Files.newBufferedReader(pathUsuarios)) {
             user = br.lines().filter(Objects::nonNull).filter(Predicate.not(String::isEmpty)).map(this::csvLineToUser).collect(Collectors.toList());
         }
-        return user; }
+        return user;
+    }
 
     @Override
-    public String userToCsVLine (Usuario usuario){
-        return String.format("%s,%s,%s,%s\r\n", usuario.getIndex(), usuario.getUserName(), usuario.getSenha(), usuario.getScore()); }
-
+    public String userToCsVLine(Usuario usuario) {
+        return String.format("%s,%s,%s,%s\r\n", usuario.getIndex(), usuario.getUserName(), usuario.getSenha(), usuario.getScore());
+    }
 
 
     @Override
@@ -75,12 +78,10 @@ public class usuarioDAOimpl implements usuarioDAO{
 
     @Override
     public Usuario inserirUsuarioNoArquivo(Usuario user) throws IOException {
+        user.setSenha(criptografia.encode(user.getSenha()));
         writeToUsuario(userToCsVLine(user), StandardOpenOption.APPEND);
         return user;
     }
-
-
-
 
 
 }

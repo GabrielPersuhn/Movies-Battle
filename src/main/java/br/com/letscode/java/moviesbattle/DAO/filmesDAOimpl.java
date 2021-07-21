@@ -26,17 +26,17 @@ public class filmesDAOimpl implements filmesDAO{
         }
     }
 
-    public String formatAllTheMovies(String linha ){
-        String csvLineIMDB = linha.substring(linha.indexOf("[")+1);
-        csvLineIMDB = csvLineIMDB.substring(0, csvLineIMDB.indexOf("]"));
-        return csvLineIMDB;}
-
-
     @Override
-    public Filme csvLineToFilme(String linha) {
-        Filme movie  =  new Filme();
-        StringTokenizer titulo = new StringTokenizer(linha, ",");
-        return movie;
-        //TODO
-    }
+    public Filme csvLineToFilme(String linha ){
+        Filme movie = new Filme();
+        StringTokenizer comma  = new StringTokenizer(linha, ",");
+        movie.setTitulo(comma.nextToken());
+        movie.setNotaIMDB(Double.parseDouble(comma.nextToken()));
+        movie.setVotos(Integer.parseInt(comma.nextToken()));
+        movie.setIdIMDB(comma.nextToken());
+        return movie;}
+
+
+
+
 }

@@ -2,6 +2,7 @@ package br.com.letscode.java.moviesbattle.service;
 
 import br.com.letscode.java.moviesbattle.dominio.Jogador;
 import br.com.letscode.java.moviesbattle.dominio.Usuario;
+import br.com.letscode.java.moviesbattle.dominio.Jogador;
 
 import java.io.IOException;
 import java.util.List;

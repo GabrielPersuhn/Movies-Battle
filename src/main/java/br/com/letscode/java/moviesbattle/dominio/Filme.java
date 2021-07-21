@@ -1,8 +1,15 @@
 package br.com.letscode.java.moviesbattle.dominio;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Filme {
-    String titulo;
-    String idIMDB;
-    double notaIMDB;
-    int votos;
+    private String titulo;
+    private String idIMDB;
+    private double notaIMDB;
+    private int votos;
 }

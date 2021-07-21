@@ -10,4 +10,5 @@ public class Jogador {
     private String name;
     private int vidas;
     private int score;
+
 }

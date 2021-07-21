@@ -47,6 +47,12 @@ public class jogadorDAOimpl implements jogadorDAO {
         }
         return player; }
 
+
+    public Optional<Jogador> findByName (String name) throws IOException {
+        List<Jogador> registeredUsers = getAllJogadores();
+        return registeredUsers.stream().filter(user -> user.getName().equals(name)).findFirst();
+    }
+
     private void writeToRank(String jogadorStr, StandardOpenOption option) throws IOException {
         try (BufferedWriter bf = Files.newBufferedWriter(pathRanking, option)) {
             bf.flush();
@@ -67,8 +73,6 @@ public class jogadorDAOimpl implements jogadorDAO {
         for (int i = 0 ; i<lines ; i++){
             System.out.printf("%s \t - \t %d" , topRank.get(i).getName(),topRank.get(i).getScore());
         }
-
-
     }
 
     @Override

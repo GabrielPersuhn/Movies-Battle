@@ -8,10 +8,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface jogadorDAO {
-
-
     void showUsTheRank(String pathRanking) throws IOException;
     List<Jogador> rankSort() throws IOException;
-
+    Optional<Jogador> findByName (String name) throws IOException;
     Jogador inserirJogadorNoRank(Jogador player) throws IOException;
-}
+
+    }
